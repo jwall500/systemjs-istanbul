@@ -40,7 +40,8 @@ exports.hookSystemJS = function(loader, exclude, coverageGlobal) {
   istanbulGlobal = istanbulGlobal || '__coverage__';
 
   var instrumenter = new istanbul.Instrumenter({
-    coverageVariable: istanbulGlobal
+    coverageVariable: istanbulGlobal,
+    esModules: true
   });
 
   var loaderTranslate = loader.translate;
